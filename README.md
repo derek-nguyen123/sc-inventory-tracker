@@ -1,5 +1,6 @@
 # sc-inventory-tracker
 Shopify Backend Developer Intern Challenge - Summer 2022
+
 Inventory tracking web application made using NodeJS, Express and Mongoose/MongoDB. Database is hosted seperately so local database is not required.
 Application started using Express Application Generator to create the skeleton program.
 
