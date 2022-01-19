@@ -5,8 +5,6 @@ Application started using Express Application Generator to create the skeleton p
 
 I chose to do the "Ability to asign/remove inventory items to a named group/collection". As demonstrated by the categories feature.
 
-Project Demo is available at:
-
 # Running the program locally
 To run the program locally, you can follow these steps:
 1. You can find node at https://nodejs.org/en/. Ubuntu users can use the following command
