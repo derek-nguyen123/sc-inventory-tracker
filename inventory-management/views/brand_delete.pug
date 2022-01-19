@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{brand.brand_name}
+
+  if brand_items.length
+    div(style='margin-left:20px;margin-top:20px')
+      p There are still items associated with this brand, cannot delete.
+      p ITEMS:
+      ul
+        each item in brand_items
+          li 
+            a(href=item.url) #{item.name} 
+            | (#{item.count})
+  else
+    p Delete #{brand.brand_name}?
+    form(method='POST' action='')
+      div.form-group
+        input#brand_id.form-control(type='hidden',name='brand_id', required='true', value=brand._id)
+      button.btn.btn-primary(type='submit') DELETE

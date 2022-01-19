@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{item.name}
+
+  p Delete #{item.name}?
+  form(method='POST' action='')
+    div.form-group
+      input#item_id.form-control(type='hidden',name='item_id', required='true', value=item._id)
+    button.btn.btn-primary(type='submit') DELETE

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  h1 Item: #{item.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+    p Brand:
+      a(href=item.brand.url) #{item.brand.brand_name}
+    p Categories:
+      each category, index in item.category
+        a(href=category.url) #{category.name}
+        if index < item.category.length - 1
+          |,
+    p Count: #{item.count}
+    p Last Updated: #{item.updated_formatted}
+  hr
+  p 
+    a(href=item.url+'/delete') Delete Item
+  p 
+    a(href=item.url+'/update') Edit Item

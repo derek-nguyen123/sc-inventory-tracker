@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title 
+  form(method='POST' action='')
+    div.form-group 
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='Item name', name='name', required='true', value=(undefined===item ? '' : item.name))
+    div.form-group
+      label(for='brand') Brand:
+      select#brand.form-control(type='select', placeholder='Select brand' name='brand' required='true' )
+        - brands.sort(function(a, b) {let A = a.brand_name.toUpperCase(); let B = b.brand_name.toUpperCase(); return (A < B) ? -1 : (A > B) ? 1 : 0;});
+        for brand in brands
+          if item
+            option(value=brand._id selected=(brand._id.toString()==item.brand._id || brand._id.toString()==item.brand) ? 'selected' : false) #{brand.brand_name}
+          else
+            option(value=brand._id) #{brand.brand_name}
+    div.form-group
+      label(for='count') Count:
+      input#count.form-control(type='number', placeholder='# in stock', name='count', required='true', value=(undefined===item ? '' : item.count))
+    div.form-group 
+      label(for='category') Categories:
+      div
+        for category in categories 
+          div(style='display:inline; padding-right:10px;')
+            input.checkbox-input(type='checkbox', name='category', id=category._id, value=category._id,checked=category.checked)
+            label(for=category._id) #{category.name}
+    button.btn.btn-primary(type='submit') Submit

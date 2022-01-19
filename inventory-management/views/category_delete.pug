@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{category.ame}
+
+  if category_items.length
+    div(style='margin-left:20px;margin-top:20px')
+      p There are still items associated with this category, cannot delete.
+      p ITEMS:
+      ul
+        each item in category_items
+          li 
+            a(href=item.url) #{item.name} 
+            | (#{item.count})
+  else
+    p Delete #{category.name}?
+    form(method='POST' action='')
+      div.form-group
+        input#category_id.form-control(type='hidden',name='category_id', required='true', value=category._id)
+      button.btn.btn-primary(type='submit') DELETE
