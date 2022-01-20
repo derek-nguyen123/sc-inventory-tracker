@@ -28,5 +28,5 @@ Double check that both node and npm are installed. Use the following commands to
 to start the program, then visit localhost:3000
 
 # Additional Notes
--Categories and Brands need to be created before creating an item, they cannot be created at item creation. They can be created and item can be reassigned later.
--Tested manually, full unit testing suite to be implemented
+- Categories and Brands need to be created before creating an item, they cannot be created at item creation. They can be created and item can be reassigned later.
+- Tested manually, full unit testing suite to be implemented
